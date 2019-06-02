@@ -10,8 +10,6 @@
     <div class="notification">説明文: {{ resp.video.description }}</div>
     <div class="video-container">
       <iframe
-        width="640"
-        height="360"
         allowfullscreen
         frameborder="0"
         :src="'http://embed.nicovideo.jp/watch/' + $route.params.videoid"
@@ -51,7 +49,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
-  height: 50%;
+  width: 70%;
+  height: 70%;
 }
 </style>
