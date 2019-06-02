@@ -8,6 +8,12 @@
       <span class="tag">マイリスト数: {{ resp.video.mylist_counter }}</span>
     </div>
     <div class="notification">説明文: {{ resp.video.description }}</div>
+    <iframe
+      class="embed-responsive-item"
+      allowfullscreen
+      frameborder="0"
+      :src="'http://embed.nicovideo.jp/watch/' + $route.params.videoid"
+    />
     <div id="video">
       {{ resp }}
     </div>
