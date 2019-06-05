@@ -19,6 +19,7 @@
 import axios from "axios"
 import VideoPlayer from "@/components/VideoPlayer.vue"
 
+// TODO: Use environment url
 const VIDEO_API_URL = "http://localhost:8080/v1/video/"
 
 export default {
