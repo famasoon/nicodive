@@ -8,13 +8,7 @@
       <span class="tag">マイリスト数: {{ resp.video.mylist_counter }}</span>
     </div>
     <div class="notification">説明文: {{ resp.video.description }}</div>
-    <div class="video-container">
-      <iframe
-        allowfullscreen
-        frameborder="0"
-        :src="'http://embed.nicovideo.jp/watch/' + $route.params.videoid"
-      />
-    </div>
+    <video-player :videoid="$route.params.videoid" />
     <div id="video">
       {{ resp }}
     </div>
@@ -23,10 +17,15 @@
 
 <script>
 import axios from "axios"
+import VideoPlayer from "@/components/VideoPlayer.vue"
 
 const VIDEO_API_URL = "http://localhost:8080/v1/video/"
 
 export default {
+  components: {
+    VideoPlayer
+  },
+
   async asyncData(context) {
     const videoID = context.params.videoid
     const { data } = await axios.get(VIDEO_API_URL + videoID)
@@ -34,22 +33,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /*16:9*/
-  padding-top: 30px;
-  height: 0;
-}
-
-.video-container iframe,
-.video-container object,
-.video-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 70%;
-  height: 70%;
-}
-</style>
