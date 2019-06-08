@@ -8,6 +8,16 @@
       <span class="tag">マイリスト数: {{ resp.video.mylist_counter }}</span>
     </div>
     <div class="notification">説明文: {{ resp.video.description }}</div>
+    <div id="videotag" class="tags is-rounded">
+      <span class="tag">タグ:</span>
+      <span
+        v-for="(item, index) in resp.tags.tag_info"
+        :key="index"
+        class="tag"
+      >
+        {{ item.tag }}
+      </span>
+    </div>
     <video-player :videoid="$route.params.videoid" />
     <div id="video">
       {{ resp }}
