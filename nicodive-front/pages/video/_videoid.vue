@@ -19,9 +19,6 @@
       </span>
     </div>
     <video-player :videoid="$route.params.videoid" />
-    <div id="video">
-      {{ resp }}
-    </div>
   </section>
 </template>
 
