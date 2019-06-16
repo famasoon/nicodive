@@ -38,8 +38,20 @@ export default {
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     "@nuxtjs/bulma",
     "@nuxtjs/pwa",
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    [
+      "@nuxtjs/dotenv",
+      {
+        filename:
+          process.env.DOMAIN !== "production"
+            ? "./config/.env.dev"
+            : "./config/.env/.env.prod"
+      }
+    ]
   ],
+  env: {
+    DOMAIN: process.env.DOMAIN
+  },
 
   /*
    ** Build configuration

@@ -32,7 +32,7 @@
 <script>
 import axios from "axios"
 
-const RANK_API_URL = "http://localhost:8080/v1/ranking/hourly/all"
+const RANK_API_URL = "http://" + process.env.DOMAIN + "/v1/ranking/hourly/all"
 
 export default {
   async asyncData(context) {
