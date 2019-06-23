@@ -45,7 +45,7 @@ export default {
         filename:
           process.env.DOMAIN !== "production"
             ? "./config/.env.dev"
-            : "./config/.env/.env.prod"
+            : "./config/.env.prod"
       }
     ]
   ],
