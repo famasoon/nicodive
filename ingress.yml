@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /v1/*
+        backend:
+          serviceName: nicodiveapi
+          servicePort: 8080
+      - path: /*
+        backend:
+          serviceName: nicodivefront
+          servicePort: 3000
