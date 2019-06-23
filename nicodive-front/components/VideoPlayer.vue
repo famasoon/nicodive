@@ -3,7 +3,7 @@
     <iframe
       allowfullscreen
       frameborder="0"
-      :src="'http://embed.nicovideo.jp/watch/' + videoid"
+      :src="'//embed.nicovideo.jp/watch/' + videoid"
     />
   </div>
 </template>
